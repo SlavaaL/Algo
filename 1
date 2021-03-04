@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main (void){
+
+    double  a, V, n;
+    printf("How many times 1?\n");
+    scanf("%lf",&n);
+
+    for (int i = 0; i < n; i++){
+        printf ("a :");
+        scanf("%lf", &a);
+        V = (pow(a, 3) * sqrt(2)) / 12;
+        printf ("V = %lf \n:", V);
+        
+    }
+return 0;
+
+}
