@@ -7,7 +7,7 @@ int main (void){
 
     double V, average, sum;
     int n, a;
-    double * calculation = malloc(n*sizeof(double));
+    double * calculation;
     
             void output(double *calculation, int n)
         {
@@ -21,6 +21,9 @@ int main (void){
     
     printf("Сколько раз производить вычисление объема правильного тетрэдра?\n");
     scanf("%i",&n);
+    
+    calculation = malloc(n*sizeof(double));
+    
     for (int i = 0; i < n; i++){
         
         printf ("Ребро тетраэдра a = ");
@@ -31,7 +34,7 @@ int main (void){
     }
     
     printf("История вычислений:  \n");
-    output(calculation,n);
+    output(calculation, n);
 
     sum = 0;
     for (int i = 0; i < n; i++){
