@@ -1,17 +1,45 @@
 #include <stdio.h>
- 
-struct person
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+
+struct person_type
 {
-    char * name;
-    char * patronymic;
-    char * surname;
-    char * birthday;
+  char *name;
+  char *surname;
+  char *father_name;
+  char *birthday;
 };
- 
-int main(void)
+
+int
+main ()
 {
-    struct person tom = {"Slava", "Batkovich", "Dontsov", "09.07.2003"};
-    printf("PID - %s %s %s \n", tom.name, tom.surname, tom.birthday);
-    printf("BD - %s %s", tom.patronymic, tom.birthday);
-    return 0;
+
+  char input_message[50];
+  struct person_type pr;
+  pr.name = "First name";
+  pr.surname = "last name";
+  pr.father_name = "father name";
+  pr.birthday = "11.05.2005";
+  
+  while (true)
+    {
+      scanf ("%s", input_message);
+      if (!strcmp (input_message, "PID"))
+	{
+	  puts (pr.surname);
+	  puts (pr.name);
+	  puts (pr.birthday);
+	}
+      else if (!strcmp (input_message, "BD"))
+	{
+	  puts (pr.father_name);
+	  puts (pr.birthday);
+	}
+      else
+	puts ("Wrong command!");
+    }
+
+  return 0;
 }
